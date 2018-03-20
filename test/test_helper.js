@@ -13,7 +13,6 @@ before((done) => {
 
 
 beforeEach((done) => {
-  mongoose.connection.collections.users.drop(() => {
-    done();
-  })
-})
+  mongoose.connection.db.dropDatabase();
+  done();
+});
